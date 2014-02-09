@@ -1,0 +1,9 @@
+server:
+  hide-version: yes
+  verbosity: <%= @verbosity %>
+  database: "<%= @ddatabase %>"
+<% if @interface.is_a? Array -%>
+<% @interface.each do |int| -%><%= "  ip-address: #{int}\n" %><% end -%>
+<% elsif @interface != '' -%><%=   "  ip-address: #{@interface}" %>
+<% end -%>
+  port: <%= @port %>
