@@ -1,0 +1,6 @@
+.DS_Store
+pkg/
+*.swp
+*.swo
+.bundle
+Gemfile.lock
