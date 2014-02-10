@@ -14,7 +14,7 @@ class nsd (
   $zonedir          = $nsd::params::zonedir,
   $group            = $nsd::params::group,
   $owner            = $nsd::params::owner,
-  $databse          = $nsd::params::database,
+  $database         = $nsd::params::database,
 ) inherits nsd::params {
 
   if ! $packag_name == '' {

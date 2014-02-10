@@ -12,7 +12,7 @@ class nsd::params {
       $owner         = '_nsd'
       $group         = '_nsd'
       $control_cmd   = 'nsdc'
-      $databse       = '/var/nsd/db/nsd.db'
+      $database      = '/var/nsd/db/nsd.db'
     }
     default: {
       fail('nsd not supported on this platform, please help add support!')
