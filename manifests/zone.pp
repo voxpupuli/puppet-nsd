@@ -14,7 +14,6 @@ define nsd::zone (
     order   => '05',
     target  => $config_file,
     content => template('nsd/zone.erb'),
-    notify  => Exec['nsdc-reload'],
   }
 
   file { "${zonedir}/${zonefile}":
@@ -22,6 +21,11 @@ define nsd::zone (
     group   => '0',
     mode    => '0640',
     content => template($template),
-    notify  => Exec['nsdc-rebuild'],
+    notify  => Exec["nsd-control reload ${name}"],
+  }
+
+  exec { "nsd-control reload ${name}":
+    command     => "nsd-control reload ${name}",
+    refreshonly => true,
   }
 }

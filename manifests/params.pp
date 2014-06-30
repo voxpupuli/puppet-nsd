@@ -6,12 +6,12 @@ class nsd::params {
 
   case $::operatingsystem {
     'openbsd': {
-      $config_file   = '/etc/nsd.conf'
+      $config_file   = '/var/nsd/etc/nsd.conf'
       $zonedir       = '/var/nsd/zones'
       $service_name  = 'nsd'
       $owner         = '_nsd'
       $group         = '_nsd'
-      $control_cmd   = 'nsdc'
+      $control_cmd   = 'nsd-control'
       $database      = '/var/nsd/db/nsd.db'
     }
     default: {

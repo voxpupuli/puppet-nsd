@@ -17,7 +17,7 @@ class nsd (
   $database         = $nsd::params::database,
 ) inherits nsd::params {
 
-  if ! $packag_name == '' {
+  if ! $package_name == '' {
     package { $package_name:
       ensure   => installed,
       provider => $package_provider,
@@ -29,16 +29,20 @@ class nsd (
   }
 
   service { $service_name:
-    ensure    => running,
-    name      => $service_name,
-    enable    => true,
-    hasstatus => false,
+    ensure => running,
+    name   => $service_name,
+    enable => true,
+    status => 'nsd-control status',
   }
 
   concat { $config_file:
-    notify => Exec['nsdc-reload'],
     owner  => 'root',
     group  => $group,
+    mode   => '0640',
+    notify => [
+      Exec['nsd-control reconfig'],
+      Exec['nsd-control reload'],
+    ]
   }
 
   concat::fragment { 'nsd-header':
@@ -47,14 +51,14 @@ class nsd (
     content => template('nsd/nsd.conf.erb'),
   }
 
-  exec { 'nsdc-rebuild':
-    command     => 'nsdc rebuild',
+  exec { 'nsd-control reload':
+    command     => 'nsd-control reload',
     refreshonly => true,
-    notify      => Exec['nsdc-reload'],
+    #notify      => Exec['nsd-control reconfig'],
   }
 
-  exec { 'nsdc-reload':
-    command     => 'nsdc reload',
+  exec { 'nsd-control reconfig':
+    command     => 'nsd-control reconfig',
     refreshonly => true,
   }
 }
