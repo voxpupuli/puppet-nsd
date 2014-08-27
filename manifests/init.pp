@@ -29,10 +29,11 @@ class nsd (
   }
 
   service { $service_name:
-    ensure => running,
-    name   => $service_name,
-    enable => true,
-    status => 'nsd-control status',
+    ensure  => running,
+    name    => $service_name,
+    enable  => true,
+    status  => 'nsd-control status',
+    require => Concat[$config_file],
   }
 
   concat { $config_file:
