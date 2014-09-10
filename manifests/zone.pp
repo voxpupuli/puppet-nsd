@@ -1,6 +1,7 @@
 #
 define nsd::zone (
   $template,
+  $templatestorage = 'puppet',
 ) {
 
   include nsd::params
@@ -16,12 +17,26 @@ define nsd::zone (
     content => template('nsd/zone.erb'),
   }
 
-  file { "${zonedir}/${zonefile}":
-    owner   => $owner,
-    group   => '0',
-    mode    => '0640',
-    content => template($template),
-    notify  => Exec["nsd-control reload ${name}"],
+  case $templatestorage {
+    'puppet': {
+                file { "${zonedir}/${zonefile}":
+                  owner   => $owner,
+                  group   => '0',
+                  mode    => '0640',
+                  content => template($template),
+                  notify  => Exec["nsd-control reload ${name}"],
+                }
+              }
+    'hiera': {
+               file { "${zonedir}/${zonefile}":
+                 owner   => $owner,
+                 group   => '0',
+                 mode    => '0640',
+                 content => hiera($template),
+                 notify  => Exec["nsd-control reload ${name}"],
+               }
+             }
+    default: { fail("templatestorage must be either 'puppet' or 'hiera'") }
   }
 
   exec { "nsd-control reload ${name}":
