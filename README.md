@@ -34,8 +34,7 @@ If you are using hiera, you may have the configuration like the
 following example, additionally to the rest of your NSD configuration,
 for one forward and one reverse zone:
 
-```
-    hiera
+```hiera
       nsd_config:
         templatestorage: hiera
         zones:
@@ -48,8 +47,7 @@ for one forward and one reverse zone:
 The templatestorage parameter tells puppet to lookup the files
 with hiera-file.
 
-```
-   puppet
+```puppet
      $nsd_config = hiera_hash('nsd_config')
      create_resources(nsd::zone, $nsd_config['zones'], { templatestorage => $nsd_config['templatestorage'] })
 ```
