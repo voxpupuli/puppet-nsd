@@ -1,6 +1,6 @@
 {
   "name": "zleslie-nsd",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "zleslie",
   "summary": "Puppet NSD management module",
   "license": "Apache License Version 2.0",
