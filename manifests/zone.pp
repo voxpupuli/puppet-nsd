@@ -27,5 +27,6 @@ define nsd::zone (
   exec { "nsd-control reload ${name}":
     command     => "nsd-control reload ${name}",
     refreshonly => true,
+    require     => Concat[$config_file],
   }
 }
