@@ -19,7 +19,3 @@ group :development do
   gem "travis-lint"
   gem "puppet-blacksmith"
 end
-
-group :production do
-  gem 'ipaddress'
-end
