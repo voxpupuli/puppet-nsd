@@ -47,8 +47,8 @@ class { 'nsd':
 The NSD remote controls the use of the nsd-control utility to issue commands to
 the NSD daemon process.
 
-```puppet
-    include nsd::remote
+```Puppet
+include nsd::remote
 ```
 
 ## Zone Management
@@ -76,21 +76,21 @@ If you are using hiera, you may have the configuration like the following
 example, additionally to the rest of your NSD configuration, for one forward
 and one reverse zone:
 
-```hiera
-      nsd_config:
-        templatestorage: hiera
-        zones:
-          intern:
-            template: 'intern.zone'
-          0.168.192.in-addr.arpa:
-            template: '0.168.192.in-addr.arpa.zone'
+```yaml
+nsd_config:
+  templatestorage: hiera
+  zones:
+    intern:
+      template: 'intern.zone'
+    0.168.192.in-addr.arpa:
+      template: '0.168.192.in-addr.arpa.zone'
 ```
 
 The `templatestorage` parameter tells puppet to lookup the files with hiera-file.
 
-```puppet
-     $nsd_config = hiera_hash('nsd_config')
-     create_resources(nsd::zone, $nsd_config['zones'], { templatestorage => $nsd_config['templatestorage'] })
+```Puppet
+$nsd_config = hiera_hash('nsd_config')
+create_resources(nsd::zone, $nsd_config['zones'], { templatestorage => $nsd_config['templatestorage'] })
 ```
 
 
