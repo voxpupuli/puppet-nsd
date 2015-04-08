@@ -1,3 +1,4 @@
+# Define: nsd::zone
 #
 define nsd::zone (
   $template,
@@ -19,24 +20,24 @@ define nsd::zone (
 
   case $templatestorage {
     'puppet': {
-                file { "${zonedir}/${zonefile}":
-                  owner   => $owner,
-                  group   => '0',
-                  mode    => '0640',
-                  content => template($template),
-                  notify  => Exec["nsd-control reload ${name}"],
-                }
-              }
+      file { "${zonedir}/${zonefile}":
+        owner   => $owner,
+        group   => '0',
+        mode    => '0640',
+        content => template($template),
+        notify  => Exec["nsd-control reload ${name}"],
+      }
+    }
     'hiera': {
-               file { "${zonedir}/${zonefile}":
-                 owner   => $owner,
-                 group   => '0',
-                 mode    => '0640',
-                 content => hiera($template),
-                 notify  => Exec["nsd-control reload ${name}"],
-               }
-             }
-    default: { fail("templatestorage must be either 'puppet' or 'hiera'") }
+      file { "${zonedir}/${zonefile}":
+        owner   => $owner,
+        group   => '0',
+        mode    => '0640',
+        content => hiera($template),
+        notify  => Exec["nsd-control reload ${name}"],
+      }
+    }
+    default: { fail('templatestorage must be either \'puppet\' or \'hiera\'') }
   }
 
   exec { "nsd-control reload ${name}":
