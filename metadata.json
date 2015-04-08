@@ -3,7 +3,7 @@
   "version": "0.3.6",
   "author": "zleslie",
   "summary": "Puppet NSD management module",
-  "license": "Apache License Version 2.0",
+  "license": "Apache-2.0",
   "source": "git://github.com/xaque208/puppet-nsd.git",
   "project_page": "https://github.com/xaque208/puppet-nsd",
   "issues_url": "https://github.com/xaque208/puppet-nsd/issues",
@@ -28,7 +28,7 @@
   "requirements": [
     {
       "name": "pe",
-      "version_requirement": ">= 3.2.0 < 3.4.0"
+      "version_requirement": ">= 3.2.0 < 3.7.1"
     },
     {
       "name": "puppet",
@@ -36,9 +36,7 @@
     }
   ],
   "dependencies": [
-    {
-      "name": "puppetlabs/concat",
-      "version_requirement": ">= 1.1.0"
-    }
+    {"name":"puppetlabs/concat","version_requirement":">=1.1.0"},
+    {"name":"puppetlabs/stdlib","version_requirement":">=4.4.0"}
   ]
 }

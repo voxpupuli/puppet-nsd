@@ -9,6 +9,7 @@ class nsd::params {
       $config_file   = '/var/nsd/etc/nsd.conf'
       $zonedir       = '/var/nsd/zones'
       $service_name  = 'nsd'
+      $package_name  = undef
       $owner         = '_nsd'
       $group         = '_nsd'
       $control_cmd   = 'nsd-control'
