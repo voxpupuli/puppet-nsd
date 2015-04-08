@@ -12,10 +12,13 @@ class nsd (
   $package_provider = $nsd::params::package_provider,
   $control_cmd      = $nsd::params::control_cmd,
   $zonedir          = $nsd::params::zonedir,
+  $zonepurge        = false, # purge of unmanaged zone files
   $group            = $nsd::params::group,
   $owner            = $nsd::params::owner,
   $database         = $nsd::params::database,
 ) inherits nsd::params {
+
+  validate_bool($zonepurge)
 
   if ! $package_name == '' {
     package { $package_name:
@@ -61,5 +64,14 @@ class nsd (
   exec { 'nsd-control reconfig':
     command     => 'nsd-control reconfig',
     refreshonly => true,
+  }
+
+  file { $zonedir:
+    ensure  => directory,
+    owner   => 'root',
+    group   => $group,
+    mode    => '0750',
+    purge   => $zonepurge,
+    recurse => true,
   }
 }

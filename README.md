@@ -66,6 +66,8 @@ nsd::zone { 'lab.example.com':
 The template string is passed directly to a `File` resource, so the same path
 should apply that would be used in the `File` resource.
 
+Use the `nsd::zonepurge` boolean to enable purging unmanaged zone files.
+
 ### With Hiera
 
 You can use hiera-file or the template directory to store your zone files that
@@ -92,7 +94,6 @@ The `templatestorage` parameter tells puppet to lookup the files with hiera-file
 $nsd_config = hiera_hash('nsd_config')
 create_resources(nsd::zone, $nsd_config['zones'], { templatestorage => $nsd_config['templatestorage'] })
 ```
-
 
 ## Unbound Operation
 
