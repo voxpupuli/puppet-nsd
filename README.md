@@ -25,14 +25,35 @@ mod 'concat', :git => 'git://github.com/puppetlabs/puppetlabs-concat.git'
 
 ## Server Setup
 
-A basic installation of NSD might look like the following.
+At minimum you only need to include the class nsd. The defaults
+are reasonable for running nsd on a stand-alone host.
 
 ```Puppet
 include nsd
 include nsd::remote
 ```
 
+If you have it running in pair with unbound, you may want to set the port nsd
+listens on:
+
+```Puppet
+class { 'nsd':
+  port => '5353',
+}
+```
+
+### Remote Control
+
+The NSD remote controls the use of the nsd-control utility to
+issue commands to the NSD daemon process.
+
+```puppet
+    include nsd::remote
+```
+
 ## Zone Management
+
+### Without Hiera
 
 Deploying zone files is simple.  A resource per zone is in order.  For example:
 
@@ -44,6 +65,35 @@ nsd::zone { 'lab.example.com':
 
 The template string is passed directly to a `File` resource, so the same path
 should apply that would be used in the `File` resource.
+
+### With Hiera
+
+You can use hiera-file or the template directory to store your
+zone files that you want to have deployed to your NSD server.
+The default is to pick them up from the modules template directory.
+
+If you are using hiera, you may have the configuration like the
+following example, additionally to the rest of your NSD configuration,
+for one forward and one reverse zone:
+
+```hiera
+      nsd_config:
+        templatestorage: hiera
+        zones:
+          intern:
+            template: 'intern.zone'
+          0.168.192.in-addr.arpa:
+            template: '0.168.192.in-addr.arpa.zone'
+```
+
+The templatestorage parameter tells puppet to lookup the files
+with hiera-file.
+
+```puppet
+     $nsd_config = hiera_hash('nsd_config')
+     create_resources(nsd::zone, $nsd_config['zones'], { templatestorage => $nsd_config['templatestorage'] })
+```
+
 
 ## Unbound Operation
 
@@ -67,5 +117,4 @@ You can find more information about NSD and its configuration at
 ## Contribute
 
 Please help me make this module awesome!  Send pull requests and file issues.
-
 
