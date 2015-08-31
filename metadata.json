@@ -1,6 +1,6 @@
 {
   "name": "zleslie-nsd",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "author": "zleslie",
   "summary": "Puppet NSD management module",
   "license": "Apache License Version 2.0",
@@ -11,7 +11,17 @@
     {
       "operatingsystem": "OpenBSD",
       "operatingsystemrelease": [
-        "5.5"
+        "5.5",
+        "5.6",
+        "5.7"
+      ]
+    },
+    {
+      "operatingsystem": "FreeBSD",
+      "operatingsystemrelease": [
+        "10.0",
+        "10.1",
+        "10.2"
       ]
     }
   ],
