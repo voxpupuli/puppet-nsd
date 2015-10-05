@@ -18,6 +18,10 @@ describe 'nsd' do
       describe "puppet class without any parameters on #{f[:operatingsystem]}" do
         let(:facts) { f }
         it { should contain_class('nsd') }
+        it { should contain_class('nsd::params') }
+        it { should contain_service('nsd') }
+        it { should contain_exec('nsd-control reconfig') }
+        it { should contain_exec('nsd-control reload') }
       end
     }
   end
