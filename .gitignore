@@ -4,3 +4,4 @@ pkg/
 *.swo
 .bundle
 Gemfile.lock
+spec/fixtures

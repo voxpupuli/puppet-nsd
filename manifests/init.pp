@@ -9,7 +9,6 @@ class nsd (
   $config_file      = $nsd::params::config_file,
   $service_name     = $nsd::params::service_name,
   $package_name     = $nsd::params::package_name,
-  $package_provider = $nsd::params::package_provider,
   $control_cmd      = $nsd::params::control_cmd,
   $zonedir          = $nsd::params::zonedir,
   $zonepurge        = false, # purge of unmanaged zone files
@@ -23,7 +22,6 @@ class nsd (
   if ! $package_name == '' {
     package { $package_name:
       ensure   => installed,
-      provider => $package_provider,
       before   => [
         Concat[$config_file],
         Service[$service_name],
