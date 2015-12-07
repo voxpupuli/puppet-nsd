@@ -56,12 +56,14 @@ class nsd (
   exec { 'nsd-control reload':
     command     => 'nsd-control reload',
     refreshonly => true,
+    require     => Service[$service_name],
     #notify      => Exec['nsd-control reconfig'],
   }
 
   exec { 'nsd-control reconfig':
     command     => 'nsd-control reconfig',
     refreshonly => true,
+    require     => Service[$service_name],
   }
 
   file { $zonedir:

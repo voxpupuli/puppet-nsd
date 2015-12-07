@@ -5,11 +5,11 @@ define nsd::zone (
   $templatestorage = 'puppet',
 ) {
 
-  include nsd::params
+  include nsd
 
-  $config_file = $nsd::params::config_file
-  $owner       = $nsd::params::owner
-  $zonedir     = $nsd::params::zonedir
+  $config_file = $nsd::config_file
+  $owner       = $nsd::owner
+  $zonedir     = $nsd::zonedir
   $zonefile    = "${name}.zone"
 
   concat::fragment { "nsd-zone-${name}":
@@ -43,6 +43,6 @@ define nsd::zone (
   exec { "nsd-control reload ${name}":
     command     => "nsd-control reload ${name}",
     refreshonly => true,
-    require     => Concat[$config_file],
+    require     => [ Concat[$config_file], Service[$::nsd::service_name], ],
   }
 }
