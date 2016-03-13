@@ -19,7 +19,7 @@ class nsd (
 
   validate_bool($zonepurge)
 
-  if ! $package_name == '' {
+  if $package_name {
     package { $package_name:
       ensure   => installed,
       before   => [
