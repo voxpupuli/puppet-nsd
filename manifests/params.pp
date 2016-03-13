@@ -18,7 +18,7 @@ class nsd::params {
     'FreeBSD': {
       $config_file  = '/usr/local/etc/nsd/nsd.conf'
       $zonedir      = '/usr/local/etc/nsd'
-      $package_name = 'nsd/nsd'
+      $package_name = 'nsd'
       $service_name = 'nsd'
       $owner        = 'nsd'
       $group        = 'nsd'
