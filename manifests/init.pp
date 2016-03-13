@@ -6,6 +6,7 @@ class nsd (
   $verbosity        = 0,
   $interface        = ['::0','0.0.0.0'],
   $port             = '53',
+  $config_d         = $nsd::params::config_d,
   $config_file      = $nsd::params::config_file,
   $service_name     = $nsd::params::service_name,
   $package_name     = $nsd::params::package_name,
@@ -34,7 +35,10 @@ class nsd (
     name    => $service_name,
     enable  => true,
     status  => 'nsd-control status',
-    require => Concat[$config_file],
+    require => [
+      Concat[$config_file],
+      Exec['nsd-control-setup'],
+    ]
   }
 
   concat { $config_file:
@@ -53,11 +57,15 @@ class nsd (
     content => template('nsd/nsd.conf.erb'),
   }
 
+  exec { 'nsd-control-setup':
+    command => 'nsd-control-setup',
+    creates => "${config_d}/nsd_control.pem",
+  }
+
   exec { 'nsd-control reload':
     command     => 'nsd-control reload',
     refreshonly => true,
     require     => Service[$service_name],
-    #notify      => Exec['nsd-control reconfig'],
   }
 
   exec { 'nsd-control reconfig':

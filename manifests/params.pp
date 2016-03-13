@@ -6,6 +6,7 @@ class nsd::params {
 
   case $::operatingsystem {
     'OpenBSD': {
+      $config_d      = '/var/nsd/etc'
       $config_file   = '/var/nsd/etc/nsd.conf'
       $zonedir       = '/var/nsd/zones'
       $service_name  = 'nsd'
@@ -16,6 +17,7 @@ class nsd::params {
       $database      = '/var/nsd/db/nsd.db'
     }
     'FreeBSD': {
+      $config_d     = '/usr/local/etc/nsd'
       $config_file  = '/usr/local/etc/nsd/nsd.conf'
       $zonedir      = '/usr/local/etc/nsd'
       $package_name = 'nsd'
