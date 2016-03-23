@@ -9,6 +9,7 @@ openbsd_facts = {
   :id => 'root',
   :kernel => 'OpenBSD',
   :is_pe => false,
+  :path => "dummy",
 }
 
 freebsd_facts = {
@@ -18,6 +19,7 @@ freebsd_facts = {
   :id => 'root',
   :kernel => 'FreeBSD',
   :is_pe => false,
+  :path => "dummy",
 }
 
 

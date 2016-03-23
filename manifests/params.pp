@@ -24,6 +24,7 @@ class nsd::params {
       $service_name = 'nsd'
       $owner        = 'nsd'
       $group        = 'nsd'
+      $control_cmd  = 'nsd-control'
       $database     = '/var/db/nsd/nsd.db'
     }
     default: {
