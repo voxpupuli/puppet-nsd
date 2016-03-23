@@ -1,4 +1,5 @@
 require 'spec_helper'
+
 fact_sets = []
 
 openbsd_facts = {
@@ -6,10 +7,24 @@ openbsd_facts = {
   :operatingsystem => 'OpenBSD',
   :concat_basedir => '/dne',
   :id => 'root',
-  :kernel => 'OpenBSD'
+  :kernel => 'OpenBSD',
+  :is_pe => false,
+  :path => "dummy",
 }
 
+freebsd_facts = {
+  :osfamily => 'FreeBSD',
+  :operatingsystem => 'FreeBSD',
+  :concat_basedir => '/dne',
+  :id => 'root',
+  :kernel => 'FreeBSD',
+  :is_pe => false,
+  :path => "dummy",
+}
+
+
 fact_sets << openbsd_facts
+fact_sets << freebsd_facts
 
 describe 'nsd' do
   context 'supported operatingsystems' do
