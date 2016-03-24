@@ -7,6 +7,7 @@ A Puppet module for the NSD authoritative resolver.
 ## Supported Platforms
 
 * OpenBSD
+* FreeBSD
 
 ## Requirements
 The `concat` module must be installed. It can be obtained from Puppet Forge:
