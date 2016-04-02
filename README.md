@@ -1,6 +1,6 @@
 # Puppet powered DNS with NSD
 
-[![Build Status](https://travis-ci.org/xaque208/puppet-nsd.svg?branch=master)](https://travis-ci.org/xaque208/puppet-nsd)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/zleslie/nsd.svg)]() [![Build Status](https://travis-ci.org/xaque208/puppet-nsd.svg?branch=master)](https://travis-ci.org/xaque208/puppet-nsd)
 
 A Puppet module for the NSD authoritative resolver.
 
