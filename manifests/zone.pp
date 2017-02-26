@@ -6,7 +6,7 @@ define nsd::zone (
   $templatestorage = 'puppet',
 ) {
 
-  include nsd
+  include ::nsd
 
   $config_file = $nsd::config_file
   $owner       = $nsd::owner

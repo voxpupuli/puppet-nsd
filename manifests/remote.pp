@@ -12,7 +12,7 @@ class nsd::remote (
   $control_cert_file = undef
 ) {
 
-  include nsd::params
+  include ::nsd::params
 
   $config_file = $nsd::params::config_file
 

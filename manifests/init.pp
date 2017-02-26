@@ -22,11 +22,11 @@ class nsd (
 
   if $package_name {
     package { $package_name:
-      ensure   => installed,
-      before   => [
+      ensure => installed,
+      before => [
         Concat[$config_file],
         Service[$service_name],
-      ]
+      ],
     }
   }
 
@@ -38,7 +38,7 @@ class nsd (
     require => [
       Concat[$config_file],
       Exec['nsd-control-setup'],
-    ]
+    ],
   }
 
   concat { $config_file:
@@ -48,7 +48,7 @@ class nsd (
     notify => [
       Exec['nsd-control reconfig'],
       Exec['nsd-control reload'],
-    ]
+    ],
   }
 
   concat::fragment { 'nsd-header':
