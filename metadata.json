@@ -1,6 +1,6 @@
 {
   "name": "zleslie-nsd",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "zleslie",
   "summary": "Puppet NSD management module",
   "license": "Apache-2.0",
@@ -26,10 +26,19 @@
     }
   ],
   "requirements": [
-    { "name": "puppet", "version_requirement": ">= 4.1.0 < 5.0.0" }
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.1.0 < 6.0.0"
+    }
   ],
   "dependencies": [
-    {"name":"puppetlabs/concat","version_requirement":">= 1.2.1 < 2.0.0"},
-    {"name":"puppetlabs/stdlib","version_requirement":">= 4.4.0"}
+    {
+      "name": "puppetlabs/concat",
+      "version_requirement": ">= 1.2.1 < 2.0.0"
+    },
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.4.0"
+    }
   ]
 }
