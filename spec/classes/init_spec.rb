@@ -30,6 +30,7 @@ describe 'nsd' do
     fact_sets.each do |f|
       describe "puppet class without any parameters on #{f[:operatingsystem]}" do
         let(:facts) { f }
+
         it { is_expected.to contain_class('nsd') }
         it { is_expected.to contain_class('nsd::params') }
         it { is_expected.to contain_service('nsd') }
