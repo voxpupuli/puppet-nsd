@@ -42,7 +42,7 @@ define nsd::zone (
   }
 
   exec { "nsd-control reload ${name}":
-    command     => "nsd-control reload ${name}",
+    command     => "$::nsd::control_cmd reload ${name}",
     refreshonly => true,
     require     => [ Concat[$config_file], Service[$::nsd::service_name], ],
   }

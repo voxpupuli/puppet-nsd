@@ -14,6 +14,7 @@ class nsd::params {
       $owner         = '_nsd'
       $group         = '_nsd'
       $control_cmd   = 'nsd-control'
+      $setup_cmd     = 'nsd-control-setup'
       $database      = '/var/nsd/db/nsd.db'
     }
     'FreeBSD': {
@@ -25,7 +26,20 @@ class nsd::params {
       $owner        = 'nsd'
       $group        = 'nsd'
       $control_cmd  = 'nsd-control'
+      $setup_cmd    = 'nsd-control-setup'
       $database     = '/var/db/nsd/nsd.db'
+    }
+    'Ubuntu': {
+      $config_d     = '/etc/nsd'
+      $config_file  = '/etc/nsd/nsd.conf'
+      $zonedir      = '/etc/nsd'
+      $package_name = 'nsd'
+      $service_name = 'nsd'
+      $owner        = 'nsd'
+      $group        = 'nsd'
+      $control_cmd  = '/usr/sbin/nsd-control'
+      $setup_cmd    = '/usr/sbin/nsd-control-setup'
+      $database     = '/var/lib/nsd/nsd.db'
     }
     default: {
       fail('nsd not supported on this platform, please help add support!')

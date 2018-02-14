@@ -11,6 +11,7 @@ class nsd (
   $service_name     = $nsd::params::service_name,
   $package_name     = $nsd::params::package_name,
   $control_cmd      = $nsd::params::control_cmd,
+  $setup_cmd        = $nsd::params::control_cmd,
   $zonedir          = $nsd::params::zonedir,
   $zonepurge        = false, # purge of unmanaged zone files
   $group            = $nsd::params::group,
@@ -58,18 +59,18 @@ class nsd (
   }
 
   exec { 'nsd-control-setup':
-    command => 'nsd-control-setup',
+    command => $setup_cmd,
     creates => "${config_d}/nsd_control.pem",
   }
 
   exec { 'nsd-control reload':
-    command     => 'nsd-control reload',
+    command     => "$control_cmd reload",
     refreshonly => true,
     require     => Service[$service_name],
   }
 
   exec { 'nsd-control reconfig':
-    command     => 'nsd-control reconfig',
+    command     => "$control_cmd reconfig",
     refreshonly => true,
     require     => Service[$service_name],
   }
