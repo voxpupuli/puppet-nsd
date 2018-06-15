@@ -3,7 +3,7 @@
 # Configure remote control of the nsd daemon process
 #
 class nsd::remote (
-  Bool $enable                                     = true,
+  Boolean $enable                                  = true,
   Array[String] $interface                         = ['::1', '127.0.0.1'],
   Integer $port                                    = 8952,
   Optiona[Stdlib::Absolutepath] $server_key_file   = undef,

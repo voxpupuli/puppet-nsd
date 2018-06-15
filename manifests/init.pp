@@ -12,7 +12,7 @@ class nsd (
   String $package_name,
   String $control_cmd,
   String $zonedir,
-  Bool $zonepurge, # purge of unmanaged zone files
+  Boolean $zonepurge, # purge of unmanaged zone files
   String $group,
   String $owner,
   String $database,
