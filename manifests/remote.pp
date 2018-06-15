@@ -6,10 +6,10 @@ class nsd::remote (
   Boolean $enable                                  = true,
   Array[String] $interface                         = ['::1', '127.0.0.1'],
   Integer $port                                    = 8952,
-  Optiona[Stdlib::Absolutepath] $server_key_file   = undef,
-  Optiona[Stdlib::Absolutepath] $server_cert_file  = undef,
-  Optiona[Stdlib::Absolutepath] $control_key_file  = undef,
-  Optiona[Stdlib::Absolutepath] $control_cert_file = undef,
+  Optional[Stdlib::Absolutepath] $server_key_file   = undef,
+  Optional[Stdlib::Absolutepath] $server_cert_file  = undef,
+  Optional[Stdlib::Absolutepath] $control_key_file  = undef,
+  Optional[Stdlib::Absolutepath] $control_cert_file = undef,
 ) {
 
   include ::nsd
