@@ -2,7 +2,7 @@
 #
 define nsd::zone (
   String $template,
-  Hash $vars = {},
+  Hash $vars       = {},
   $templatestorage = 'puppet',
 ) {
 

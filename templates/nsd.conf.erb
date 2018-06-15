@@ -7,3 +7,6 @@ server:
 <% elsif @interface != '' -%><%=   "  ip-address: #{@interface}" %>
 <% end -%>
   port: <%= @port %>
+<% if @logfile -%>
+  logfile: "<%= @logfile %>"
+<% end -%>

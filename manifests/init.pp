@@ -3,22 +3,21 @@
 # Installs and configures NSD, the authoritative DNS resolver from NLnet Labs
 #
 class nsd (
-  $verbosity        = 0,
-  $interface        = ['::0','0.0.0.0'],
-  $port             = '53',
-  $config_d         = $nsd::params::config_d,
-  $config_file      = $nsd::params::config_file,
-  $service_name     = $nsd::params::service_name,
-  $package_name     = $nsd::params::package_name,
-  $control_cmd      = $nsd::params::control_cmd,
-  $zonedir          = $nsd::params::zonedir,
-  $zonepurge        = false, # purge of unmanaged zone files
-  $group            = $nsd::params::group,
-  $owner            = $nsd::params::owner,
-  $database         = $nsd::params::database,
-) inherits nsd::params {
-
-  validate_bool($zonepurge)
+  Integer $verbosity                    = 0,
+  Array[Stdlib::Ip_address]  $interface = ['::0','0.0.0.0'],
+  Integer $port                         = 53,
+  String $config_d,
+  String $config_file,
+  String $service_name,
+  String $package_name,
+  String $control_cmd,
+  String $zonedir,
+  Bool $zonepurge, # purge of unmanaged zone files
+  String $group,
+  String $owner,
+  String $database,
+  Optional[String] $logfile = undef,
+) {
 
   if $package_name {
     package { $package_name:

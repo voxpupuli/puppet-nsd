@@ -3,18 +3,18 @@
 # Configure remote control of the nsd daemon process
 #
 class nsd::remote (
-  $enable            = true,
-  $interface         = ['::1', '127.0.0.1'],
-  $port              = 8952,
-  $server_key_file   = undef,
-  $server_cert_file  = undef,
-  $control_key_file  = undef,
-  $control_cert_file = undef
+  Bool $enable                                     = true,
+  Array[String] $interface                         = ['::1', '127.0.0.1'],
+  Integer $port                                    = 8952,
+  Optiona[Stdlib::Absolutepath] $server_key_file   = undef,
+  Optiona[Stdlib::Absolutepath] $server_cert_file  = undef,
+  Optiona[Stdlib::Absolutepath] $control_key_file  = undef,
+  Optiona[Stdlib::Absolutepath] $control_cert_file = undef,
 ) {
 
-  include ::nsd::params
+  include ::nsd
 
-  $config_file = $nsd::params::config_file
+  $config_file = $nsd::config_file
 
   concat::fragment { 'nsd-remote':
     order   => '10',

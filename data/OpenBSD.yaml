@@ -1,0 +1,9 @@
+nsd::config_d: '/var/nsd/etc'
+nsd::config_file: '/var/nsd/etc/nsd.conf'
+nsd::zonedir: '/var/nsd/zones'
+nsd::service_name: 'nsd'
+nsd::owner: '_nsd'
+nsd::group: '_nsd'
+nsd::control_cmd: 'nsd-control'
+nsd::database: '/var/nsd/db/nsd.db'
+
