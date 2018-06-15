@@ -1,4 +1,4 @@
---
+---
 nsd::config_d: '/usr/local/etc/nsd'
 nsd::config_file: '/usr/local/etc/nsd/nsd.conf'
 nsd::zonedir: '/usr/local/etc/nsd'
