@@ -4,7 +4,7 @@
 #
 class nsd (
   Integer $verbosity                    = 0,
-  Array[Stdlib::Ip_address]  $interface = ['::0','0.0.0.0'],
+  Array[Stdlib::Ip::Address]  $interface = ['::0','0.0.0.0'],
   Integer $port                         = 53,
   String $config_d,
   String $config_file,
