@@ -32,7 +32,6 @@ describe 'nsd' do
         let(:facts) { f }
 
         it { is_expected.to contain_class('nsd') }
-        it { is_expected.to contain_class('nsd::params') }
         it { is_expected.to contain_service('nsd') }
         it { is_expected.to contain_exec('nsd-control reconfig') }
         it { is_expected.to contain_exec('nsd-control reload') }
