@@ -1,0 +1,11 @@
+---
+nsd::config_d: '/usr/local/etc/nsd'
+nsd::config_file: '/usr/local/etc/nsd/nsd.conf'
+nsd::zonedir: '/usr/local/etc/nsd'
+nsd::package_name: 'nsd'
+nsd::service_name: 'nsd'
+nsd::owner: 'nsd'
+nsd::group: 'nsd'
+nsd::control_cmd: 'nsd-control'
+nsd::database: '/var/db/nsd/nsd.db'
+
