@@ -3,9 +3,6 @@
 # Installs and configures NSD, the authoritative DNS resolver from NLnet Labs
 #
 class nsd (
-  Integer $verbosity                    = 0,
-  Array[Stdlib::Ip::Address]  $interface = ['::0','0.0.0.0'],
-  Integer $port                         = 53,
   String $config_d,
   String $config_file,
   String $service_name,
@@ -16,7 +13,10 @@ class nsd (
   String $group,
   String $owner,
   String $database,
-  Optional[String] $logfile = undef,
+  Integer $verbosity                    = 0,
+  Integer $port                         = 53,
+  Array[Stdlib::Ip::Address] $interface = ['::0','0.0.0.0'],
+  Optional[String] $logfile             = undef,
 ) {
 
   if $package_name {
