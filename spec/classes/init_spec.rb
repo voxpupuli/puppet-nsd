@@ -1,38 +1,36 @@
 require 'spec_helper'
 
-fact_sets = []
-
-openbsd_facts = {
-  osfamily: 'OpenBSD',
-  operatingsystem: 'OpenBSD',
-  concat_basedir: '/dne',
-  id: 'root',
-  kernel: 'OpenBSD',
-  is_pe: false,
-  path: 'dummy'
-}
-
-freebsd_facts = {
-  osfamily: 'FreeBSD',
-  operatingsystem: 'FreeBSD',
-  concat_basedir: '/dne',
-  id: 'root',
-  kernel: 'FreeBSD',
-  is_pe: false,
-  path: 'dummy'
-}
-
-fact_sets << openbsd_facts
-fact_sets << freebsd_facts
-
 describe 'nsd' do
-  context 'supported operatingsystems' do
-    fact_sets.each do |f|
-      describe "puppet class without any parameters on #{f[:operatingsystem]}" do
-        let(:facts) { f }
+  let(:params) { {} }
 
+  on_supported_os.each do |os, facts|
+    context "on #{os}" do
+      case facts[:os]['family']
+      when 'OpenBSD'
+        let(:config_d) { '/var/nsd/etc' }
+        let(:config_file) { '/var/nsd/etc/nsd.conf' }
+        let(:zonedir) { '/var/nsd/zones' }
+        let(:service_name) { 'nsd' }
+        let(:owner) { '_nsd' }
+        let(:group) { '_nsd' }
+        let(:control_cmd) { 'nsd-control' }
+        let(:database) { '/var/nsd/db/nsd.db' }
+      when 'FreeBSD'
+        let(:config_d) { '/usr/local/etc/nsd' }
+        let(:config_file) { '/usr/local/etc/nsd/nsd.conf' }
+        let(:zonedir) { '/usr/local/etc/nsd' }
+        let(:service_name) { 'nsd' }
+        let(:owner) { 'nsd' }
+        let(:group) { 'nsd' }
+        let(:control_cmd) { 'nsd-control' }
+        let(:database) { '/var/db/nsd/nsd.db' }
+      end
+
+      let(:facts) { facts.merge(concat_basedir: '/dne') }
+      let(:package_name) { 'nsd' }
+
+      context 'with default params' do
         it { is_expected.to contain_class('nsd') }
-        it { is_expected.to contain_class('nsd::params') }
         it { is_expected.to contain_service('nsd') }
         it { is_expected.to contain_exec('nsd-control reconfig') }
         it { is_expected.to contain_exec('nsd-control reload') }
