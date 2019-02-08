@@ -1,6 +1,7 @@
 nsd::config_d: '/var/nsd/etc'
 nsd::config_file: '/var/nsd/etc/nsd.conf'
 nsd::zonedir: '/var/nsd/zones'
+nsd::package_name: ~
 nsd::service_name: 'nsd'
 nsd::owner: '_nsd'
 nsd::group: '_nsd'
