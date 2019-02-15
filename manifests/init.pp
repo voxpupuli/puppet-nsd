@@ -6,7 +6,7 @@ class nsd (
   String $config_d,
   String $config_file,
   String $service_name,
-  String $package_name,
+  Variant[String,Undef] $package_name,
   String $control_cmd,
   String $zonedir,
   Boolean $zonepurge, # purge of unmanaged zone files
