@@ -12,7 +12,7 @@ class nsd::remote (
   Optional[Stdlib::Absolutepath] $control_cert_file = undef,
 ) {
 
-  include ::nsd
+  include nsd
 
   $config_file = $nsd::config_file
 
