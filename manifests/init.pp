@@ -33,10 +33,8 @@ class nsd (
     ensure  => running,
     name    => $service_name,
     enable  => true,
-    status  => 'nsd-control status',
     require => [
       Concat[$config_file],
-      Exec['nsd-control-setup'],
     ],
   }
 
@@ -44,10 +42,7 @@ class nsd (
     owner  => 'root',
     group  => $group,
     mode   => '0640',
-    notify => [
-      Exec['nsd-control reconfig'],
-      Exec['nsd-control reload'],
-    ],
+    notify => Service[$service_name],
   }
 
   concat::fragment { 'nsd-header':
