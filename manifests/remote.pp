@@ -11,7 +11,6 @@ class nsd::remote (
   Optional[Stdlib::Absolutepath] $control_key_file  = undef,
   Optional[Stdlib::Absolutepath] $control_cert_file = undef,
 ) {
-
   include nsd
 
   $config_file = $nsd::config_file
