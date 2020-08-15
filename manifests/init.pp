@@ -18,7 +18,6 @@ class nsd (
   Array[Stdlib::Ip::Address] $interface = ['::0','0.0.0.0'],
   Optional[String] $logfile             = undef,
 ) {
-
   if $package_name {
     package { $package_name:
       ensure => installed,

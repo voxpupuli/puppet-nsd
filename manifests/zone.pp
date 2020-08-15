@@ -5,7 +5,6 @@ define nsd::zone (
   Hash $vars       = {},
   $templatestorage = 'puppet',
 ) {
-
   include nsd
 
   $config_file = $nsd::config_file
@@ -44,6 +43,6 @@ define nsd::zone (
   exec { "nsd-control reload ${name}":
     command     => "nsd-control reload ${name}",
     refreshonly => true,
-    require     => [ Concat[$config_file], Service[$nsd::service_name], ],
+    require     => [Concat[$config_file], Service[$nsd::service_name],],
   }
 }
