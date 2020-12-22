@@ -1,12 +1,12 @@
 {
-  "name": "zleslie-nsd",
+  "name": "puppet-nsd",
   "version": "1.3.0",
-  "author": "zleslie",
+  "author": "Vox Pupuli",
   "summary": "Puppet NSD management module",
   "license": "Apache-2.0",
-  "source": "git://github.com/xaque208/puppet-nsd.git",
-  "project_page": "https://github.com/xaque208/puppet-nsd",
-  "issues_url": "https://github.com/xaque208/puppet-nsd/issues",
+  "source": "git://github.com/voxpupuli/puppet-nsd.git",
+  "project_page": "https://github.com/voxpupuli/puppet-nsd",
+  "issues_url": "https://github.com/voxpupuli/puppet-nsd/issues",
   "operatingsystem_support": [
     {
       "operatingsystem": "OpenBSD",
@@ -27,7 +27,7 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 4.1.0 < 6.0.0"
+      "version_requirement": ">= 5.5.8 < 6.0.0"
     }
   ],
   "dependencies": [
