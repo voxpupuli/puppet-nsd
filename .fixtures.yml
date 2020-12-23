@@ -5,6 +5,6 @@ fixtures:
       ref: '5.2.0'
     concat:
       repo: "https://github.com/puppetlabs/puppetlabs-concat.git"
-      ref: '1.2.1'
+      ref: 'v6.4.0'
   symlinks:
     nsd: "#{source_dir}"

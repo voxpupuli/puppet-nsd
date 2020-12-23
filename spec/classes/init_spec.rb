@@ -26,7 +26,7 @@ describe 'nsd' do
         let(:database) { '/var/db/nsd/nsd.db' }
       end
 
-      let(:facts) { facts.merge(concat_basedir: '/dne') }
+      let(:facts) { facts }
       let(:package_name) { 'nsd' }
 
       context 'with default params' do
