@@ -1,6 +1,13 @@
 # Puppet powered DNS with NSD
 
-[![Puppet Forge](https://img.shields.io/puppetforge/v/zleslie/nsd.svg)]() [![Build Status](https://travis-ci.org/xaque208/puppet-nsd.svg?branch=master)](https://travis-ci.org/xaque208/puppet-nsd)
+[![CI](https://github.com/voxpupuli/puppet-nsd/actions/workflows/ci.yml/badge.svg)](https://github.com/voxpupuli/puppet-nsd/actions/workflows/ci.yml)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/puppet/nsd.svg)](https://forge.puppetlabs.com/puppet/nsd)
+[![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/puppet/nsd.svg)](https://forge.puppetlabs.com/puppet/nsd)
+[![Puppet Forge - endorsement](https://img.shields.io/puppetforge/e/puppet/nsd.svg)](https://forge.puppetlabs.com/puppet/nsd)
+[![Puppet Forge - scores](https://img.shields.io/puppetforge/f/puppet/nsd.svg)](https://forge.puppetlabs.com/puppet/nsd)
+[![puppetmodule.info docs](http://www.puppetmodule.info/images/badge.png)](http://www.puppetmodule.info/m/puppet-nsd)
+[![AGPL v3 License](https://img.shields.io/github/license/voxpupuli/puppet-nsd.svg)](LICENSE)
+[![Donated by Zach Leslie](https://img.shields.io/badge/donated%20by-Zach%20Leslie-fb7047.svg)](#copyright)
 
 A Puppet module for the NSD authoritative resolver.
 
@@ -114,8 +121,30 @@ Nsd::Zone {
 You can find more information about NSD and its configuration at
 [nlnetlabs.nl](http://www.nlnetlabs.nl/projects/nsd/).
 
+## Transfer Notice
+
+This plugin was originally authored by [Zach Leslie](https://forge.puppet.com/modules/zleslie).
+The maintainer preferred that Puppet Community take ownership of the module for future improvement and maintenance.
+Existing pull requests and issues were transferred over, please fork and continue to contribute here instead of Camptocamp.
+
+Previously: https://github.com/xaque208/puppet-nsd
 
 ## Contribute
 
 Please help me make this module awesome!  Send pull requests and file issues.
 
+## Copyright
+
+Copyright Zach Leslie
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
