@@ -7,5 +7,6 @@ nsd::service_name: 'nsd'
 nsd::owner: 'nsd'
 nsd::group: 'nsd'
 nsd::control_cmd: 'nsd-control'
+nsd::control_setup_cmd: 'nsd-control-setup'
 nsd::database: '/var/db/nsd/nsd.db'
 
