@@ -5,7 +5,7 @@ nsd::package_name: ~
 nsd::service_name: 'nsd'
 nsd::owner: '_nsd'
 nsd::group: '_nsd'
-nsd::control_cmd: 'nsd-control'
-nsd::control_setup_cmd: 'nsd-control-setup'
+nsd::control_cmd: '/usr/sbin/nsd-control'
+nsd::control_setup_cmd: '/usr/sbin/nsd-control-setup'
 nsd::database: '/var/nsd/db/nsd.db'
 
