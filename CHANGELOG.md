@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v3.0.0](https://github.com/voxpupuli/puppet-nsd/tree/v3.0.0) (2025-12-15)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-nsd/compare/v2.0.0...v3.0.0)
+
+**Breaking changes:**
+
+- Drop puppet, update openvox minimum version to 8.19 [\#69](https://github.com/voxpupuli/puppet-nsd/pull/69) ([TheMeier](https://github.com/TheMeier))
+- Drop Puppet 6 support [\#48](https://github.com/voxpupuli/puppet-nsd/pull/48) ([bastelfreak](https://github.com/bastelfreak))
+
+**Implemented enhancements:**
+
+- metadata.json: Add OpenVox [\#65](https://github.com/voxpupuli/puppet-nsd/pull/65) ([jstraw](https://github.com/jstraw))
+- puppetlabs/concat: Allow 9.x [\#55](https://github.com/voxpupuli/puppet-nsd/pull/55) ([zilchms](https://github.com/zilchms))
+- Add Puppet 8 support [\#51](https://github.com/voxpupuli/puppet-nsd/pull/51) ([bastelfreak](https://github.com/bastelfreak))
+- puppetlabs/stdlib: Allow 9.x [\#50](https://github.com/voxpupuli/puppet-nsd/pull/50) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Allow stdlib 8.0.0 [\#43](https://github.com/voxpupuli/puppet-nsd/pull/43) ([smortex](https://github.com/smortex))
+
 ## [v2.0.0](https://github.com/voxpupuli/puppet-nsd/tree/v2.0.0) (2021-06-16)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-nsd/compare/1.3.0...v2.0.0)
@@ -27,9 +47,9 @@ These should not affect the functionality of the module.
 
 **Merged pull requests:**
 
-- Disable nsd-control for service status [\#29](https://github.com/voxpupuli/puppet-nsd/pull/29) ([xaque208](https://github.com/xaque208))
-- Update from xaque208 modulesync\_config [\#28](https://github.com/voxpupuli/puppet-nsd/pull/28) ([xaque208](https://github.com/xaque208))
-- Update from xaque208 modulesync\_config [\#27](https://github.com/voxpupuli/puppet-nsd/pull/27) ([xaque208](https://github.com/xaque208))
+- Disable nsd-control for service status [\#29](https://github.com/voxpupuli/puppet-nsd/pull/29) ([zachfi](https://github.com/zachfi))
+- Update from xaque208 modulesync\_config [\#28](https://github.com/voxpupuli/puppet-nsd/pull/28) ([zachfi](https://github.com/zachfi))
+- Update from xaque208 modulesync\_config [\#27](https://github.com/voxpupuli/puppet-nsd/pull/27) ([zachfi](https://github.com/zachfi))
 
 ## [1.2.3](https://github.com/voxpupuli/puppet-nsd/tree/1.2.3) (2019-02-27)
 
@@ -37,7 +57,7 @@ These should not affect the functionality of the module.
 
 **Merged pull requests:**
 
-- Update from xaque208 modulesync\_config [\#26](https://github.com/voxpupuli/puppet-nsd/pull/26) ([xaque208](https://github.com/xaque208))
+- Update from xaque208 modulesync\_config [\#26](https://github.com/voxpupuli/puppet-nsd/pull/26) ([zachfi](https://github.com/zachfi))
 
 ## [1.2.2](https://github.com/voxpupuli/puppet-nsd/tree/1.2.2) (2019-02-27)
 
@@ -45,7 +65,7 @@ These should not affect the functionality of the module.
 
 **Merged pull requests:**
 
-- Update from xaque208 modulesync\_config [\#25](https://github.com/voxpupuli/puppet-nsd/pull/25) ([xaque208](https://github.com/xaque208))
+- Update from xaque208 modulesync\_config [\#25](https://github.com/voxpupuli/puppet-nsd/pull/25) ([zachfi](https://github.com/zachfi))
 
 ## [1.2.1](https://github.com/voxpupuli/puppet-nsd/tree/1.2.1) (2019-02-15)
 
@@ -61,9 +81,9 @@ These should not affect the functionality of the module.
 
 **Merged pull requests:**
 
-- Updatesforbuildjail [\#23](https://github.com/voxpupuli/puppet-nsd/pull/23) ([xaque208](https://github.com/xaque208))
-- Update from xaque208 modulesync\_config [\#21](https://github.com/voxpupuli/puppet-nsd/pull/21) ([xaque208](https://github.com/xaque208))
-- modulesync 1.9.0-16-gc46b42a [\#20](https://github.com/voxpupuli/puppet-nsd/pull/20) ([xaque208](https://github.com/xaque208))
+- Updatesforbuildjail [\#23](https://github.com/voxpupuli/puppet-nsd/pull/23) ([zachfi](https://github.com/zachfi))
+- Update from xaque208 modulesync\_config [\#21](https://github.com/voxpupuli/puppet-nsd/pull/21) ([zachfi](https://github.com/zachfi))
+- modulesync 1.9.0-16-gc46b42a [\#20](https://github.com/voxpupuli/puppet-nsd/pull/20) ([zachfi](https://github.com/zachfi))
 
 ## [1.1.1](https://github.com/voxpupuli/puppet-nsd/tree/1.1.1) (2018-02-11)
 
@@ -71,8 +91,8 @@ These should not affect the functionality of the module.
 
 **Merged pull requests:**
 
-- Update from xaque208 modulesync\_config [\#16](https://github.com/voxpupuli/puppet-nsd/pull/16) ([xaque208](https://github.com/xaque208))
-- modulesync 2017-05-03 [\#15](https://github.com/voxpupuli/puppet-nsd/pull/15) ([xaque208](https://github.com/xaque208))
+- Update from xaque208 modulesync\_config [\#16](https://github.com/voxpupuli/puppet-nsd/pull/16) ([zachfi](https://github.com/zachfi))
+- modulesync 2017-05-03 [\#15](https://github.com/voxpupuli/puppet-nsd/pull/15) ([zachfi](https://github.com/zachfi))
 
 ## [1.1.0](https://github.com/voxpupuli/puppet-nsd/tree/1.1.0) (2017-02-26)
 
@@ -80,7 +100,7 @@ These should not affect the functionality of the module.
 
 **Merged pull requests:**
 
-- modulesync 2017-02-07 [\#14](https://github.com/voxpupuli/puppet-nsd/pull/14) ([xaque208](https://github.com/xaque208))
+- modulesync 2017-02-07 [\#14](https://github.com/voxpupuli/puppet-nsd/pull/14) ([zachfi](https://github.com/zachfi))
 
 ## [1.0.0](https://github.com/voxpupuli/puppet-nsd/tree/1.0.0) (2016-08-07)
 
@@ -96,7 +116,7 @@ These should not affect the functionality of the module.
 
 **Merged pull requests:**
 
-- Update testing to include puppet4 [\#13](https://github.com/voxpupuli/puppet-nsd/pull/13) ([xaque208](https://github.com/xaque208))
+- Update testing to include puppet4 [\#13](https://github.com/voxpupuli/puppet-nsd/pull/13) ([zachfi](https://github.com/zachfi))
 
 ## [0.4.1](https://github.com/voxpupuli/puppet-nsd/tree/0.4.1) (2016-03-24)
 
@@ -117,7 +137,7 @@ These should not affect the functionality of the module.
 **Merged pull requests:**
 
 - make dependencies on nsd-control runs require Service\[nsd\] [\#10](https://github.com/voxpupuli/puppet-nsd/pull/10) ([buzzdeee](https://github.com/buzzdeee))
-- Begin spec testing [\#9](https://github.com/voxpupuli/puppet-nsd/pull/9) ([xaque208](https://github.com/xaque208))
+- Begin spec testing [\#9](https://github.com/voxpupuli/puppet-nsd/pull/9) ([zachfi](https://github.com/zachfi))
 
 ## [0.3.6](https://github.com/voxpupuli/puppet-nsd/tree/0.3.6) (2015-08-31)
 
@@ -129,7 +149,7 @@ These should not affect the functionality of the module.
 
 **Merged pull requests:**
 
-- Allow for zone file removal [\#6](https://github.com/voxpupuli/puppet-nsd/pull/6) ([xaque208](https://github.com/xaque208))
+- Allow for zone file removal [\#6](https://github.com/voxpupuli/puppet-nsd/pull/6) ([zachfi](https://github.com/zachfi))
 
 ## [0.3.4](https://github.com/voxpupuli/puppet-nsd/tree/0.3.4) (2015-04-08)
 
@@ -137,7 +157,7 @@ These should not affect the functionality of the module.
 
 **Merged pull requests:**
 
-- Watch the status of the master branch [\#7](https://github.com/voxpupuli/puppet-nsd/pull/7) ([xaque208](https://github.com/xaque208))
+- Watch the status of the master branch [\#7](https://github.com/voxpupuli/puppet-nsd/pull/7) ([zachfi](https://github.com/zachfi))
 
 ## [0.3.3](https://github.com/voxpupuli/puppet-nsd/tree/0.3.3) (2014-10-19)
 
@@ -157,7 +177,7 @@ These should not affect the functionality of the module.
 
 **Merged pull requests:**
 
-- Import testing from skeleton [\#5](https://github.com/voxpupuli/puppet-nsd/pull/5) ([xaque208](https://github.com/xaque208))
+- Import testing from skeleton [\#5](https://github.com/voxpupuli/puppet-nsd/pull/5) ([zachfi](https://github.com/zachfi))
 - make nsd nodule future parser compatible [\#3](https://github.com/voxpupuli/puppet-nsd/pull/3) ([buzzdeee](https://github.com/buzzdeee))
 
 ## [0.2.0](https://github.com/voxpupuli/puppet-nsd/tree/0.2.0) (2014-08-27)
@@ -166,7 +186,7 @@ These should not affect the functionality of the module.
 
 **Merged pull requests:**
 
-- Add Support for unbound-control and some cleanup [\#2](https://github.com/voxpupuli/puppet-nsd/pull/2) ([xaque208](https://github.com/xaque208))
+- Add Support for unbound-control and some cleanup [\#2](https://github.com/voxpupuli/puppet-nsd/pull/2) ([zachfi](https://github.com/zachfi))
 
 ## [0.1.1](https://github.com/voxpupuli/puppet-nsd/tree/0.1.1) (2014-06-30)
 
@@ -178,7 +198,7 @@ These should not affect the functionality of the module.
 
 **Merged pull requests:**
 
-- Lay the groundwork for the NSD module. [\#1](https://github.com/voxpupuli/puppet-nsd/pull/1) ([xaque208](https://github.com/xaque208))
+- Lay the groundwork for the NSD module. [\#1](https://github.com/voxpupuli/puppet-nsd/pull/1) ([zachfi](https://github.com/zachfi))
 
 
 
