@@ -8,6 +8,7 @@ class nsd (
   String $service_name,
   Variant[String,Undef] $package_name,
   String $control_cmd,
+  String $control_setup_cmd,
   String $zonedir,
   Boolean $zonepurge, # purge of unmanaged zone files
   String $group,
@@ -51,18 +52,18 @@ class nsd (
   }
 
   exec { 'nsd-control-setup':
-    command => 'nsd-control-setup',
+    command => $control_setup_cmd,
     creates => "${config_d}/nsd_control.pem",
   }
 
   exec { 'nsd-control reload':
-    command     => 'nsd-control reload',
+    command     => "${control_cmd} reload",
     refreshonly => true,
     require     => Service[$service_name],
   }
 
   exec { 'nsd-control reconfig':
-    command     => 'nsd-control reconfig',
+    command     => "${control_cmd} reconfig",
     refreshonly => true,
     require     => Service[$service_name],
   }
